@@ -4,8 +4,9 @@ def mandelbrot(c, max_iteration):
     z = 0
 
     for i in range(max_iteration):
-        z = z * z + c
+        z = z * z + c  #core Mandelbrot formula
 
+        #if magnitude is greater than 2, it escapes to infinity
         if abs(z)>2:
             return i
         
@@ -14,6 +15,7 @@ def mandelbrot(c, max_iteration):
 def run(width, height, max_iteration):
     start_time = time.time()
 
+    #loop through each pixel in the grid
     for x in range(width):
         for y in range(height):
             c= complex(
